@@ -1,0 +1,1 @@
+/* JavaScript de `home.html` */
