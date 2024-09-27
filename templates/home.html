@@ -1,0 +1,24 @@
+{# Insere (herda) o template `layout.html` nesta página #}
+{% extends "layout.html" %}
+
+{# Bloco dentro de <article></article> de `layout.html` #}
+{% block article %}
+
+<h2>Artigos Recentes</h2>
+
+{% for article in page.articles %}
+
+<li>{{ article.art_id }}: {{ article.art_title }}</li>
+
+{% endfor %}
+
+{% endblock%}
+
+{# Bloco dentro de <aside></aside> de `layout.html` #}
+{% block aside %}
+
+<!-- Conteudo fake de teste → REMOVA-ME!!!! -->
+<h3>Título complementar</h3>
+<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+
+{%endblock %}

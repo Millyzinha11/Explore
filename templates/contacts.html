@@ -1,0 +1,20 @@
+{# Insere (herda) o template `layout.html` nesta página #}
+{% extends "layout.html" %}
+
+{# Bloco dentro de <article></article> de `layout.html` #}
+{% block article %}
+
+<h2>Faça Contato</h2>
+<form action="">
+    Nome: <input type="text" name="" id="">
+</form>
+
+{% endblock%}
+
+{# Bloco dentro de <aside></aside> de `layout.html` #}
+{% block aside %}
+
+<h3>+ contatos</h3>
+<p>você pode nos encontrar nas redes sociais:</p>
+
+{% endblock %}

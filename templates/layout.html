@@ -9,6 +9,8 @@
     {% if page.css %}
     <link rel="stylesheet" href="/static/css/{{ page.css }}">
     {% endif %}
+    <link rel="shortcut icon" href="/static/img/favicon.alpha.png" type="image/x-icon">
+    {# Título da página #}
     <title>{{ page.title }}</title>
 </head>
 
@@ -44,39 +46,11 @@
 
         <main>
 
-            <article>
+            {# Carrega o bloco `article` da página original #}
+            <article>{% block article %}{% endblock%}</article>
 
-                <!-- Conteudo fake de teste → REMOVA-ME!!!! -->
-                <h2>Título do Article</h2>
-                                
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit eum, dolor ad alias nesciunt
-                    consequuntur in error enim numquam sit sunt! Quia eius tempora provident tempore culpa cupiditate
-                    sunt dignissimos?</p>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem qui voluptatum hic repudiandae labore
-                    quod deleniti temporibus perferendis quisquam recusandae, eum alias natus, dolor at! Error saepe est
-                    cupiditate consectetur!</p>
-                <img src="https://picsum.photos/200/300" alt="Imagem aleatória">
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi consequatur laboriosam reiciendis
-                    dolorem, exercitationem dolor natus hic quisquam itaque maxime doloribus. Adipisci debitis quod
-                    perferendis repudiandae similique quam voluptatum eveniet.</p>
-                <h4>Links:</h4>
-                <ul>
-                    <li><a href="https://catabist.com.br">Site do Fessô</a></li>
-                    <li><a href="https://github.com/Luferat">Github do fessô</a></li>
-                </ul>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis a mollitia doloribus
-                    repudiandae incidunt ullam debitis, minima iure quia, recusandae odio magnam velit quos ad nam
-                    eaque. Ut, dolorem eveniet?</p>
-
-            </article>
-
-            <aside>
-
-                <!-- Conteudo fake de teste → REMOVA-ME!!!! -->
-                <h3>Título do aside</h3>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-
-            </aside>
+            {# Carrega o bloco `aside` da página original #}
+            <aside>{% block aside %}{%endblock %}</aside>
 
         </main>
 
@@ -99,6 +73,7 @@
     </div>
 
     <script src="/static/js/layout.js"></script>
+
     {# Verifica se solicitou a carga do JavaScript da página #}
     {% if page.js %}
     <script src="/static/js/{{ page.js }}"></script>
